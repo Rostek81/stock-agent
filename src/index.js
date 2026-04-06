@@ -1,12 +1,12 @@
 import { appConfig, validateConfig } from './config.js';
-import { startBackgroundAgent, runAnalysisAndSendReport } from './agent.js';
+import { startBackgroundAgent, runAnalysisAndPrintReport } from './agent.js';
 
 async function bootstrap() {
   validateConfig();
 
   if ((process.env.RUN_ON_START ?? 'true') === 'true') {
     console.log('[agent] Wykonuję analizę startową...');
-    await runAnalysisAndSendReport(appConfig);
+    await runAnalysisAndPrintReport(appConfig);
   }
 
   startBackgroundAgent(appConfig);

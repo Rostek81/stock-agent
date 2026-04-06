@@ -1,16 +1,15 @@
 {
   "name": "stock-agent",
   "version": "1.0.0",
-  "description": "Background NASDAQ analysis agent with daily email report",
+  "description": "Background NASDAQ analysis agent with daily console report",
   "type": "module",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "check": "node --check src/index.js && node --check src/agent.js && node --check src/analyzer.js && node --check src/dataProvider.js && node --check src/reportEmail.js"
+    "check": "node --check src/index.js && node --check src/agent.js && node --check src/analyzer.js && node --check src/dataProvider.js && node --check src/reportConsole.js && node --check src/config.js"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
-    "node-cron": "^3.0.3",
-    "nodemailer": "^6.9.16"
+    "node-cron": "^3.0.3"
   }
 }
