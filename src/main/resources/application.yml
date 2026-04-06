@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: stock-agent
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${MAIL_USERNAME:}
+    password: ${MAIL_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+agent:
+  cron: "0 0 14 * * MON-FRI"
+  time-zone: "Europe/Warsaw"
+  report-recipient: ${REPORT_RECIPIENT:twoj_mail@example.com}
+  symbols:
+    - AAPL
+    - MSFT
+    - NVDA
+    - AMZN
+    - META
+    - TSLA
+  analysis-lookback-days: 30
+  min-daily-volume: 1000000
+  min-score-to-recommend: 2.0
